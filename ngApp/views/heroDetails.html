@@ -1,0 +1,135 @@
+<!-- <h1>Hero Details Page</h1>
+
+<div ng-show="!controller.isEditMode">
+    <div class="modal-header">
+        <h1>{{controller.hero.alias}}</h1>
+    </div>
+</div>
+
+<div class="modal-body">
+    <img ng-src="{{controller.hero.imgUrl}}" class='img-responsive img-thumbnail' alt="" />
+    <h4>Undercover Name: {{controller.hero.name}}</h4>
+    <h4>Superpowers: {{controller.hero.superpowers}}</h4>
+</div>
+
+
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn-success btn-sm' ng-click='controller.closeModal()'>Close</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn- btn-sm'ng-click="controller.deleteHero()">Delete</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn-danger btn-sm'ng-click="controller.toggleEditMode()">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="controller.isEditMode">
+    <div class="modal-header">
+        <h1>Edit Hero</h1>
+    </div>
+
+<form ng-submit='controller.saveHero()' novalidate>
+
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="title">Super Hero Name:</label>
+            <input type="text" class='form-control' ng-model="controller.hero.alias" ng-required>
+        </div>
+
+            <div class="form-group">
+                <label for="director">Alias:</label>
+                <input type="text" class='form-control'ng-model="controller.hero.name" ng-required>
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">Super Powers:</label>
+                <input type="text" class='form-control'ng-model="controller.hero.superpowers" ng-required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class='btn btn-primary btn-block btn-sm' value="Save">
+                <input type="button" class='btn btn-danger btn-block btn-sm' value="Cancel" ng-click='controller.cancelSave()'>
+            </div>
+        </div>
+    </div>
+    </form> -->
+
+    <div ng-show="!controller.isEditMode">
+    <!-- only can edit when the modal is showing -->
+    <div class="modal-header">
+        <h1>{{controller.hero.alias}}</h1>
+
+    </div>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 offset-md-2">
+                <img ng-src="{{controller.hero.imgUrl}}" class ='img-responsive img-thumbnail' alt="" />
+                <h4>Undercover Name: {{controller.hero.name}}</h4>
+                <h4>Superpowers: {{controller.hero.superpowers}}</h4>
+        </div>
+            </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn-success btn-sm' ng-click='controller.closeModal()'>Close</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn- btn-sm'ng-click="controller.deleteHero(controller.hero.id)">Delete</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class='btn btn-block btn-danger btn-sm'ng-click="controller.toggleEditMode()">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="controller.isEditMode">
+    <div class="modal-header">
+        <h1>Edit Hero</h1>
+    </div>
+
+<form ng-submit='controller.saveHero()' novalidate>
+
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="Hero">Hero</label>
+            <input type="text" class='form-control' ng-model="controller.hero.alias" ng-required>
+        </div>
+
+            <div class="form-group">
+                <label for="Alias">Alias</label>
+                <input type="text" class='form-control'ng-model="controller.hero.name" ng-required>
+            </div>
+
+            <div class="form-group">
+                <label for="superpowers">Super Powers</label>
+                <input type="text" class='form-control'ng-model="controller.hero.superpowers" ng-required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class='btn btn-primary btn-block btn-sm' value="Save">
+                <input type="button" class='btn btn-danger btn-block btn-sm' value="Cancel" ng-click='vm.cancelSave()'>
+            </div>
+        </div>
+    </div>
+    </form>

@@ -1,0 +1,22 @@
+<h1>List of heroes are displayed here</h1>
+
+<p>
+    <a href="/save"><i>Add your favorite hero here!</i></a>
+</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <input type="text" class = "form-control" ng-model='heroName' placeholder='search for a hero...'>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3" ng-repeat='h in controller.heroes|filter:{alias:heroName}'>
+        <img ng-src="{{h.imgUrl}}" alt="Responsive image" class = "img-responsive img-rounded" ng-click='controller.getHeroDetails(h.id)'/>
+        <h2>{{h.alias}}</h2>
+
+    </div>
+
+</div>
